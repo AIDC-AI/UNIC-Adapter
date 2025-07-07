@@ -1,0 +1,62 @@
+[
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_wo_bg/bear_plushie.png",
+        "instruction_prompt": "Generate image from stuffed animal image",
+        "save_path": "./examples/output_imgs/subject_imgs_wo_bg/bear_plushie_13.png",
+        "prompt": "a stuffed animal floating on top of water",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.5,
+        "image_instruction_guidance": 1.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_wo_bg/dog2.png",
+        "instruction_prompt": "Generate image from dog image",
+        "save_path": "./examples/output_imgs/subject_imgs_wo_bg/dog2_0.png",
+        "prompt": "a dog in the jungle",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.5,
+        "image_instruction_guidance": 1.5,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_wo_bg/poop_emoji.png",
+        "instruction_prompt": "Generate image from toy image",
+        "save_path": "./examples/output_imgs/subject_imgs_wo_bg/poop_emoji_3.png",
+        "prompt": "a toy on a cobblestone street",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.5,
+        "image_instruction_guidance": 1.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_wo_bg/teapot.png",
+        "instruction_prompt": "Generate image from teapot image",
+        "save_path": "./examples/output_imgs/subject_imgs_wo_bg/teapot_0.png",
+        "prompt": "a teapot in the jungle",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.5,
+        "image_instruction_guidance": 1.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_wo_bg/wolf_plushie.png",
+        "instruction_prompt": "Generate image from stuffed animal image",
+        "save_path": "./examples/output_imgs/subject_imgs_wo_bg/wolf_plushie_18.png",
+        "prompt": "a stuffed animal on top of a dirt road",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.5,
+        "image_instruction_guidance": 1.0,
+        "task_type": "subject",
+        "seed": 1204
+    }
+]

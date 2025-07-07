@@ -1,0 +1,62 @@
+[
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_w_bg/backpack.png",
+        "instruction_prompt": "Generate image from backpack image with natural background.",
+        "save_path": "./examples/output_imgs/subject_imgs_w_bg/backpack_13.png",
+        "prompt": "a backpack floating on top of water",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_w_bg/cat.png",
+        "instruction_prompt": "Generate image from Tabby cat sitting outdoors. image with natural background.",
+        "save_path": "./examples/output_imgs/subject_imgs_w_bg/cat_8.png",
+        "prompt": "a Tabby cat sitting outdoors. with a blue house in the background",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_w_bg/cat2.png",
+        "instruction_prompt": "Generate image from Gray cat lying on bed. image with natural background.",
+        "save_path": "./examples/output_imgs/subject_imgs_w_bg/cat2_9.png",
+        "prompt": "a Gray cat lying on bed. on top of a purple rug in a forest",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_w_bg/dog.png",
+        "instruction_prompt": "Generate image from dog image with natural background.",
+        "save_path": "./examples/output_imgs/subject_imgs_w_bg/dog_19.png",
+        "prompt": "a dog in a purple wizard outfit",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "subject",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/subject_imgs_w_bg/dog7.png",
+        "instruction_prompt": "Generate image from dog image with natural background.",
+        "save_path": "./examples/output_imgs/subject_imgs_w_bg/dog7_2.png",
+        "prompt": "a dog on the beach",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 7.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "subject",
+        "seed": 1204
+    }
+]

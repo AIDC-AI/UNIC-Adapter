@@ -1,0 +1,74 @@
+[
+    {
+        "instruction_image": "./examples/input_imgs/style_imgs/Cubism.png",
+        "instruction_prompt": "Generate image from style image",
+        "save_path": "./examples/output_imgs/style_imgs/mountain_Cubism.png",
+        "prompt": "A mountain range with clouds and a rainbow.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 6.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "style",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/style_imgs/Surrealism.png",
+        "instruction_prompt": "Generate image from style image",
+        "save_path": "./examples/output_imgs/style_imgs/house_Surrealism.png",
+        "prompt": "A house by a river.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 6.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "style",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/style_imgs/artstyle-cubist.png",
+        "instruction_prompt": "Generate image from style image",
+        "save_path": "./examples/output_imgs/style_imgs/rain_artstyle-cubist.png",
+        "prompt": "A street scene with people walking under umbrellas in the rain.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 6.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "style",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/style_imgs/artstyle-psychedelic.png",
+        "instruction_prompt": "Generate image from style image",
+        "save_path": "./examples/output_imgs/style_imgs/bridge_artstyle-psychedelic.png",
+        "prompt": "A bridge over a river with autumn foliage.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 6.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "style",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/style_imgs/misc-stainedglass.png",
+        "instruction_prompt": "Generate image from style image",
+        "save_path": "./examples/output_imgs/style_imgs/bicycle_misc-stainedglass.png",
+        "prompt": "A bicycle on a beach boardwalk.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 6.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "style",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/style_imgs/papercraft-collage.png",
+        "instruction_prompt": "Generate image from style image",
+        "save_path": "./examples/output_imgs/style_imgs/elephant_papercraft-collage.png",
+        "prompt": "An elephant walking in a savannah.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 6.0,
+        "image_instruction_guidance": 3.0,
+        "task_type": "style",
+        "seed": 1204
+    }
+]

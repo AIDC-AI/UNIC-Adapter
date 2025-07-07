@@ -1,0 +1,26 @@
+[
+    {
+        "instruction_image": "./examples/input_imgs/editing/0.png",
+        "instruction_prompt": "Swap the marble wall with a red brick wall.",
+        "save_path": "./examples/output_imgs/editing/0.png",
+        "prompt": "Swap the marble wall with a red brick wall.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 5.0,
+        "image_instruction_guidance": 1.0,
+        "task_type": "editing",
+        "seed": 1204
+    },
+    {
+        "instruction_image": "./examples/input_imgs/editing/1.png",
+        "instruction_prompt": "Add a man with short brown hair, wearing a dark gray t-shirt, smiling in the foreground.",
+        "save_path": "./examples/output_imgs/editing/1.png",
+        "prompt": "Add a man with short brown hair, wearing a dark gray t-shirt, smiling in the foreground.",
+        "output_h": 512,
+        "output_w": 512,
+        "prompt_guidance": 5.0,
+        "image_instruction_guidance": 1.0,
+        "task_type": "editing",
+        "seed": 1204
+    }
+]

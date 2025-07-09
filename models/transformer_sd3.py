@@ -198,7 +198,6 @@ def rope(pos: Tensor, dim: int, theta: int) -> Tensor:
 
 
 def scale_rope(pe, alpha):
-    # print(pe.shape, alpha.shape)
     bs, h, n, c = pe.shape[:4]
     pe_theta = torch.atan2(pe[..., 1, 0], pe[..., 0, 0])
     pe_theta = pe_theta * alpha
@@ -264,8 +263,6 @@ class SD3Transformer2DModelControl(ModelMixin, ConfigMixin, PeftAdapterMixin, Fr
             int, ...
         ] = (),  # () for sd3.0; (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) for sd3.5
         qk_norm: Optional[str] = None,
-        # control_step: int = 4,
-        # control_type: str = "add",
         control_scale: float = 1.0,
     ):
         super().__init__()
@@ -285,7 +282,6 @@ class SD3Transformer2DModelControl(ModelMixin, ConfigMixin, PeftAdapterMixin, Fr
         )
         self.context_embedder = nn.Linear(self.config.joint_attention_dim, self.config.caption_projection_dim)
         blocks = []
-        # self.control_type = control_type
         for i in range(self.config.num_layers):
             blocks.append(
                 JointTransformerBlockControl(
@@ -295,7 +291,6 @@ class SD3Transformer2DModelControl(ModelMixin, ConfigMixin, PeftAdapterMixin, Fr
                     context_pre_only= i == num_layers - 1,
                     qk_norm=qk_norm,
                     use_dual_attention=True if i in dual_attention_layers else False,
-                    # control_type = control_type, 
                     control_scale = control_scale,
                 )
             )

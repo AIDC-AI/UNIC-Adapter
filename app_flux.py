@@ -49,7 +49,7 @@ print("pipeline loaded")
 pipe = pipe.to("cuda:0")
 
 
-def process_image_and_text(task, image, instruction, image_instruction_guidance, prompt, prompt_guidance, output_h, output_w):
+def process_image_and_text(task, image, instruction, prompt, prompt_guidance, output_h, output_w):
 
     transform_rgb = transforms.Compose([
         transforms.ToTensor(),
@@ -84,7 +84,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.2,
             "task_type": "subject",
             "seed": 1204
         },
@@ -96,7 +95,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 3.0,
             "task_type": "subject",
             "seed": 1204
         },
@@ -108,7 +106,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 5.0,
-            "image_instruction_guidance": 1.0,
             "task_type": "editing",
             "seed": 1204
         },
@@ -120,7 +117,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 3.0,
             "task_type": "style",
             "seed": 1204
         },
@@ -132,7 +128,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -144,7 +139,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.0,
             "task_type": "understand",
             "seed": 1204
         },
@@ -156,7 +150,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.0,
             "task_type": "understand",
             "seed": 1204
         },
@@ -168,7 +161,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -180,7 +172,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -192,7 +183,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -204,7 +194,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -216,7 +205,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -228,7 +216,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -240,7 +227,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -252,7 +238,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -264,7 +249,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         },
@@ -276,7 +260,6 @@ def get_samples():
             "output_h": 512,
             "output_w": 512,
             "prompt_guidance": 4.0,
-            "image_instruction_guidance": 1.3,
             "task_type": "pixel",
             "seed": 1204
         }
@@ -286,7 +269,6 @@ def get_samples():
             sample["task_type"],
             sample["instruction_image"],
             sample["instruction_prompt"],
-            sample["image_instruction_guidance"],
             sample["prompt"],
             sample["prompt_guidance"],
             sample["output_h"],
@@ -299,7 +281,7 @@ def get_samples():
 header = """
 # UNIC-Adapter / FLUX.1-dev
 <div style="text-align: center; display: flex; justify-content: left; gap: 5px;">
-<a href="https://arxiv.org/abs/2412.18928"><img src="https://img.shields.io/badge/ariXv-Paper-A42C25.svg" alt="arXiv"></a>
+<a href="https://arxiv.org/abs/2412.18928"><img src="https://img.shields.io/badge/arXiv-Paper-A42C25.svg" alt="arXiv"></a>
 </div>
 """
 
@@ -319,7 +301,6 @@ def create_app():
                 )
                 
                 instruction = gr.Textbox(lines=2, label="Text Instruction", elem_id="text_instruction")
-                image_instruction_guidance = gr.Slider(minimum=1.0, maximum=3.0, step=0.1, label="Image-Instruction Guidance Scale")
                 
                 prompt = gr.Textbox(lines=2, label="Text Prompt", elem_id="text_prompt")
                 prompt_guidance = gr.Slider(minimum=3.0, maximum=8.0, step=0.5, value=7.0, label="Prompt Guidance Scale")
@@ -331,17 +312,17 @@ def create_app():
 
             with gr.Column(variant="panel", elem_classes="outputPanel"):
                 output_image = gr.Image(type="pil", elem_id="output")
-        # task, image, instruction, image_instruction_guidance, prompt, prompt_guidance, output_h, output_w
+
         with gr.Row():
            examples = gr.Examples(
                examples=get_samples(),
-               inputs=[task, original_image, instruction, image_instruction_guidance, prompt, prompt_guidance, output_h, output_w],
+               inputs=[task, original_image, instruction, prompt, prompt_guidance, output_h, output_w],
                label="Examples",
            )
 
         submit_btn.click(
             fn=process_image_and_text,
-            inputs=[task, original_image, instruction, image_instruction_guidance, prompt, prompt_guidance, output_h, output_w],
+            inputs=[task, original_image, instruction, prompt, prompt_guidance, output_h, output_w],
             outputs=output_image,
         )
 

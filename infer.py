@@ -74,7 +74,6 @@ def load_model_and_pipeline(model_type, ckpt_path, base_model_path):
     adapter_sd = torch.load(ckpt_path, map_location="cpu")
     model_sd.update(adapter_sd)
     load_info = unic_adapter_model.load_state_dict(model_sd, strict=True)
-    print(load_info)
     unic_adapter_model.half()
     unic_adapter_model.eval()
     pipe.transformer = unic_adapter_model
@@ -143,7 +142,7 @@ def main(args):
         image_ = 2 * image_ - 1
         image_ = torch.from_numpy(image_).to("cuda", dtype=torch.float32).unsqueeze(0).permute(0, 3, 1, 2)
         if integrity_checker.test_image(image_):
-            raise ValueError("Your image has been flagged. Choose another prompt/image or try again.")
+            raise ValueError("The generated image was flagged by the content filter for potentially sensitive or copyrighted content.")
         else:
             image.save(sample["save_path"].replace("output_imgs", "output_imgs_{}".format(args.model_type)))
         

@@ -239,7 +239,7 @@ def get_samples():
 header = """
 # UNIC-Adapter / Stable Diffusion 3 medium
 <div style="text-align: center; display: flex; justify-content: left; gap: 5px;">
-<a href="https://arxiv.org/abs/2412.18928"><img src="https://img.shields.io/badge/ariXv-Paper-A42C25.svg" alt="arXiv"></a>
+<a href="https://arxiv.org/abs/2412.18928"><img src="https://img.shields.io/badge/arXiv-Paper-A42C25.svg" alt="arXiv"></a>
 </div>
 """
 

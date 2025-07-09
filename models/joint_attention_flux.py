@@ -216,10 +216,6 @@ class JointFluxSingleTransformerBlockControl(nn.Module):
             eps=1e-6,
             pre_only=True,
         )
-        #         dit_model:  11901408320
-        # dit_model_control:  17665691712
-        #         dit_model:  11901408320
-        # dit_model_control:  15154564160
 
     def forward(
         self,
@@ -238,11 +234,6 @@ class JointFluxSingleTransformerBlockControl(nn.Module):
         norm_hidden_states_control, gate_control = self.norm_control(hidden_states_control, emb=temb_control)
         mlp_hidden_states_control = self.act_mlp(self.proj_mlp(norm_hidden_states_control))
 
-        # attn_output = self.attn(
-        #     hidden_states=norm_hidden_states,
-        #     image_rotary_emb=image_rotary_emb,
-        #     proportional_attention=proportional_attention,
-        # )
         attn_output, _, attn_output_control, _ = AttnProcessor_UNIC_Adapter(
             self.attn,
             self.attn_control,

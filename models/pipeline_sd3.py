@@ -419,8 +419,6 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
                 max_sequence_length=max_sequence_length,
                 device=device,
             )
-            # print(prompt_embed.shape, prompt_2_embed.shape, clip_prompt_embeds.shape, t5_prompt_embed.shape)
-            # aa
             clip_prompt_embeds = torch.nn.functional.pad(
                 clip_prompt_embeds, (0, t5_prompt_embed.shape[-1] - clip_prompt_embeds.shape[-1])
             )
@@ -966,6 +964,11 @@ class StableDiffusion3Pipeline(DiffusionPipeline, SD3LoraLoaderMixin, FromSingle
 
                 # perform guidance
                 if self.do_classifier_free_guidance:
+                    # Perform guidance. The final prediction is a combination of:
+                    # 1. Unconditional prediction (noise_pred_uncond).
+                    # 2. Image-instruction conditioned prediction (noise_pred_no_prompt).
+                    # 3. Full text and image-instruction conditioned prediction (noise_pred_full).
+                    # The two guidance scales control the influence of image-instruction and text prompt respectively.
                     noise_pred_uncond, noise_pred_no_prompt, noise_pred_full = noise_pred.chunk(3)
                     noise_pred = noise_pred_uncond + \
                                 image_instruction_guidance * (noise_pred_no_prompt - noise_pred_uncond) + \

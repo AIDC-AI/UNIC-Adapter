@@ -4,7 +4,7 @@
 
 UNIC-Adapter is a unified image-instruction adapter that integrates multimodal instructions for controllable image generation. This repository contains the official implementation for the CVPR 2025 paper "UNIC-Adapter: Unified Image-instruction Adapter with Multi-modal Transformer for Image Generation".
 
-In this repository, we release a model based on SD3 Medium, which supports the tasks described in our paper. In addition, we also provide two further models: one built on SD3.5 Medium, which is capable of traditional computer vision perception tasks, and another on FLUX.1-dev, which supports both instruction-based image editing and traditional computer vision perception tasks.
+In this repository, we release a model based on SD3 Medium, which supports the tasks described in our paper. In addition, we also provide two additional models: one built on SD3.5 Medium, which is capable of traditional computer vision perception tasks, and another on FLUX.1-dev, which supports both instruction-based image editing and traditional computer vision perception tasks.
 
 ## Quick Start
 
@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 ### Download Pretrained Models
-Download the trained adapter models from [Hugging Face](https://huggingface.co/models/AIDC-AI/UNIC-Adapter/) and place them in `./ckpts/`:
+Download the trained adapter models from [Hugging Face](https://huggingface.co/AIDC-AI/UNIC-Adapter/) and place them in `./ckpts/`:
 - `sd3_medium_adapter.pth`
 - `sd3.5_medium_adapter.pth`
 - `flux_adapter.pth`
@@ -28,7 +28,7 @@ Run batch inference using the provided scripts. Outputs will be saved in `./exam
 sh test_sd3_medium.sh
 
 # For Stable Diffusion 3.5 Medium
-sh test_sd3.5_medium.sh
+sh test_sd3_5_medium.sh
 
 # For FLUX.1-dev
 sh test_flux.sh
@@ -38,7 +38,7 @@ sh test_flux.sh
 
 #### Configuration Files
 Inference uses JSON configuration files specifying input parameters. Example configs in `./examples/` include:
-- `pixel_twelve_example.json`: Pixel-level control tasks
+- `pixel_level_example.json`: Pixel-level control tasks
 - `style_example.json`: Style transfer tasks
 - `subject_example_wo_bg.json`: Subject-driven generation (white background)
 - `subject_example_w_bg.json`: Subject-driven generation

@@ -1,7 +1,7 @@
 # UNIC-Adapter: Unified Image-Instruction Adapter for Multimodal Image Generation
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-A42C25.svg)](https://arxiv.org/abs/2412.18928)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![HF Model](https://img.shields.io/badge/Model-AIDC--AI/UNIC--Adapter-green)](https://huggingface.co/AIDC-AI/UNIC-Adapter)
 UNIC-Adapter is a unified image-instruction adapter that integrates multimodal instructions for controllable image generation. This repository contains the official implementation for the CVPR 2025 paper "UNIC-Adapter: Unified Image-instruction Adapter with Multi-modal Transformer for Image Generation".
 
 In this repository, we release a model based on SD3 Medium, which supports the tasks described in our paper. In addition, we also provide two additional models: one built on SD3.5 Medium, which is capable of traditional computer vision perception tasks, and another on FLUX.1-dev, which supports both instruction-based image editing and traditional computer vision perception tasks.
